@@ -30,6 +30,7 @@ public class PostController {
     @Autowired
     private ResponseErrorValidation responseErrorValidation;
 
+    @PostMapping("/create")
     public ResponseEntity<Object> createPost(@Valid @RequestBody  PostDTO postDTO, BindingResult bindingResult, Principal principal) {
 
         ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
